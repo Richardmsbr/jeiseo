@@ -1,0 +1,439 @@
+/**
+ * JeiSEO Admin Styles
+ */
+
+/* Variables */
+:root {
+    --jeiseo-primary: #2563eb;
+    --jeiseo-primary-dark: #1d4ed8;
+    --jeiseo-success: #22c55e;
+    --jeiseo-warning: #eab308;
+    --jeiseo-error: #ef4444;
+    --jeiseo-gray-50: #f9fafb;
+    --jeiseo-gray-100: #f3f4f6;
+    --jeiseo-gray-200: #e5e7eb;
+    --jeiseo-gray-300: #d1d5db;
+    --jeiseo-gray-600: #4b5563;
+    --jeiseo-gray-900: #111827;
+}
+
+/* Layout */
+.jeiseo-wrap {
+    max-width: 1200px;
+    margin: 20px 20px 20px 0;
+}
+
+.jeiseo-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.jeiseo-badge-pro {
+    background: linear-gradient(135deg, var(--jeiseo-success), #16a34a);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.jeiseo-badge-active {
+    background: var(--jeiseo-success);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Dashboard Grid */
+.jeiseo-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Cards */
+.jeiseo-card {
+    background: white;
+    border: 1px solid var(--jeiseo-gray-200);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.jeiseo-card h2,
+.jeiseo-card h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: var(--jeiseo-gray-900);
+}
+
+/* Score Card */
+.jeiseo-score-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    grid-column: span 2;
+}
+
+.jeiseo-score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--score-color) calc(var(--score, 0) * 3.6deg),
+        var(--jeiseo-gray-200) 0
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.jeiseo-score-circle::before {
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 50%;
+}
+
+.jeiseo-score-value {
+    position: relative;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--jeiseo-gray-900);
+}
+
+.jeiseo-score-max {
+    position: relative;
+    font-size: 14px;
+    color: var(--jeiseo-gray-600);
+}
+
+.jeiseo-score-info {
+    flex: 1;
+}
+
+.jeiseo-score-label {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 8px 0;
+}
+
+.jeiseo-last-audit {
+    color: var(--jeiseo-gray-600);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Stats Grid */
+.jeiseo-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.jeiseo-stat {
+    text-align: center;
+    padding: 16px;
+    background: var(--jeiseo-gray-50);
+    border-radius: 8px;
+}
+
+.jeiseo-stat-value {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--jeiseo-primary);
+}
+
+.jeiseo-stat-label {
+    font-size: 12px;
+    color: var(--jeiseo-gray-600);
+    text-transform: uppercase;
+}
+
+/* Checklist */
+.jeiseo-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.jeiseo-checklist li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--jeiseo-gray-200);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.jeiseo-checklist li:last-child {
+    border-bottom: none;
+}
+
+.jeiseo-checklist li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.jeiseo-checklist li.success::before {
+    background: var(--jeiseo-success);
+}
+
+.jeiseo-checklist li.warning::before {
+    background: var(--jeiseo-warning);
+}
+
+.jeiseo-checklist li.error::before {
+    background: var(--jeiseo-error);
+}
+
+/* Usage Card */
+.jeiseo-usage {
+    margin-bottom: 16px;
+}
+
+.jeiseo-usage-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--jeiseo-gray-200);
+}
+
+.jeiseo-usage-value {
+    font-weight: 600;
+}
+
+/* Quick Actions */
+.jeiseo-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.jeiseo-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--jeiseo-gray-50);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--jeiseo-gray-900);
+    transition: background 0.2s;
+}
+
+.jeiseo-action:hover {
+    background: var(--jeiseo-gray-100);
+    color: var(--jeiseo-primary);
+}
+
+/* Progress Bar */
+.jeiseo-progress {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--jeiseo-gray-50);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.jeiseo-progress-bar {
+    height: 8px;
+    background: var(--jeiseo-gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.jeiseo-progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 30%;
+    background: var(--jeiseo-primary);
+    border-radius: 4px;
+    animation: progress 1.5s ease-in-out infinite;
+}
+
+@keyframes progress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
+}
+
+/* Audit Results */
+.jeiseo-results-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--jeiseo-gray-200);
+}
+
+.jeiseo-score-mini {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.jeiseo-results-summary {
+    flex: 1;
+    color: var(--jeiseo-gray-600);
+}
+
+/* Issues List */
+.jeiseo-issues {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.jeiseo-issue {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--jeiseo-gray-50);
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.jeiseo-issue.critical {
+    border-color: var(--jeiseo-error);
+}
+
+.jeiseo-issue.warning {
+    border-color: var(--jeiseo-warning);
+}
+
+.jeiseo-issue.info {
+    border-color: var(--jeiseo-primary);
+}
+
+.jeiseo-issue-content {
+    flex: 1;
+}
+
+.jeiseo-issue-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.jeiseo-issue-message {
+    color: var(--jeiseo-gray-600);
+    font-size: 14px;
+}
+
+/* Forms */
+.jeiseo-form-row {
+    margin-bottom: 20px;
+}
+
+.jeiseo-form-row label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.jeiseo-form-row input[type="text"],
+.jeiseo-form-row select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--jeiseo-gray-300);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.jeiseo-form-inline {
+    display: flex;
+    gap: 16px;
+}
+
+.jeiseo-form-inline > div {
+    flex: 1;
+}
+
+/* Content Preview */
+.jeiseo-content-preview {
+    background: var(--jeiseo-gray-50);
+    border: 1px solid var(--jeiseo-gray-200);
+    border-radius: 8px;
+    padding: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.jeiseo-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.jeiseo-content-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* License */
+.jeiseo-license-active {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 8px;
+}
+
+.jeiseo-license-active .dashicons {
+    color: var(--jeiseo-success);
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.jeiseo-pro-badge {
+    background: var(--jeiseo-primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+/* Quota */
+.jeiseo-quota {
+    background: var(--jeiseo-gray-100);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--jeiseo-gray-600);
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .jeiseo-score-card {
+        grid-column: span 1;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .jeiseo-form-inline {
+        flex-direction: column;
+    }
+
+    .jeiseo-results-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
