@@ -116,11 +116,55 @@ class JeiSEO_Admin {
      * Register settings
      */
     public function register_settings(): void {
-        register_setting( 'jeiseo_settings', 'jeiseo_api_provider' );
-        register_setting( 'jeiseo_settings', 'jeiseo_api_key' );
-        register_setting( 'jeiseo_settings', 'jeiseo_auto_fix' );
-        register_setting( 'jeiseo_settings', 'jeiseo_weekly_report' );
-        register_setting( 'jeiseo_settings', 'jeiseo_license_key' );
+        register_setting(
+            'jeiseo_settings',
+            'jeiseo_api_provider',
+            array(
+                'type'              => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+                'default'           => 'openai',
+            )
+        );
+
+        register_setting(
+            'jeiseo_settings',
+            'jeiseo_api_key',
+            array(
+                'type'              => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+                'default'           => '',
+            )
+        );
+
+        register_setting(
+            'jeiseo_settings',
+            'jeiseo_auto_fix',
+            array(
+                'type'              => 'boolean',
+                'sanitize_callback' => 'rest_sanitize_boolean',
+                'default'           => false,
+            )
+        );
+
+        register_setting(
+            'jeiseo_settings',
+            'jeiseo_weekly_report',
+            array(
+                'type'              => 'boolean',
+                'sanitize_callback' => 'rest_sanitize_boolean',
+                'default'           => true,
+            )
+        );
+
+        register_setting(
+            'jeiseo_settings',
+            'jeiseo_license_key',
+            array(
+                'type'              => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+                'default'           => '',
+            )
+        );
     }
 
     /**

@@ -9,7 +9,6 @@
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: jeiseo
- * Domain Path: /languages
  * Requires at least: 6.0
  * Requires PHP: 8.1
  *
@@ -93,7 +92,6 @@ final class JeiSEO {
         register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 
         add_action( 'plugins_loaded', array( $this, 'init' ) );
-        add_action( 'init', array( $this, 'load_textdomain' ) );
     }
 
     /**
@@ -112,17 +110,6 @@ final class JeiSEO {
             new JeiSEO_Admin();
             new JeiSEO_Dashboard();
         }
-    }
-
-    /**
-     * Load translations
-     */
-    public function load_textdomain(): void {
-        load_plugin_textdomain(
-            'jeiseo',
-            false,
-            dirname( JEISEO_PLUGIN_BASENAME ) . '/languages'
-        );
     }
 
     /**
