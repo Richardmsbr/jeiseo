@@ -42,14 +42,14 @@ class JeiSEO_Content {
         check_ajax_referer( 'jeiseo_nonce', 'nonce' );
 
         if ( ! current_user_can( 'edit_posts' ) ) {
-            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         // Check quota for free users
         if ( ! jeiseo()->is_pro() && jeiseo()->get_free_quota( 'content' ) <= 0 ) {
             wp_send_json_error(
                 array(
-                    'message' => __( 'Free content limit reached. Upgrade to PRO for unlimited content.', 'jeiseo' ),
+                    'message' => __( 'Free content limit reached. Upgrade to PRO for unlimited content.', 'jeiseo-ai-marketing-automation' ),
                     'upgrade' => true,
                 )
             );
@@ -59,13 +59,13 @@ class JeiSEO_Content {
         $type = isset( $_POST['content_type'] ) ? sanitize_text_field( wp_unslash( $_POST['content_type'] ) ) : 'blog_post';
 
         if ( empty( $keyword ) ) {
-            wp_send_json_error( array( 'message' => __( 'Please enter a keyword or topic.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Please enter a keyword or topic.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         $api = $this->get_api();
 
         if ( ! $api->is_configured() ) {
-            wp_send_json_error( array( 'message' => __( 'API key not configured. Go to Settings.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'API key not configured. Go to Settings.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         $options = array(
@@ -117,7 +117,7 @@ class JeiSEO_Content {
         check_ajax_referer( 'jeiseo_nonce', 'nonce' );
 
         if ( ! current_user_can( 'edit_posts' ) ) {
-            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         $content_id = isset( $_POST['content_id'] ) ? intval( $_POST['content_id'] ) : 0;
@@ -126,7 +126,7 @@ class JeiSEO_Content {
         $status = isset( $_POST['status'] ) ? sanitize_text_field( wp_unslash( $_POST['status'] ) ) : 'draft';
 
         if ( empty( $title ) || empty( $content ) ) {
-            wp_send_json_error( array( 'message' => __( 'Title and content are required.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Title and content are required.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         // Create post
@@ -164,7 +164,7 @@ class JeiSEO_Content {
                 'post_id'  => $post_id,
                 'edit_url' => get_edit_post_link( $post_id, 'raw' ),
                 'view_url' => get_permalink( $post_id ),
-                'message'  => __( 'Post created successfully!', 'jeiseo' ),
+                'message'  => __( 'Post created successfully!', 'jeiseo-ai-marketing-automation' ),
             )
         );
     }

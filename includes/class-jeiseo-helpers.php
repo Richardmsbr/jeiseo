@@ -29,11 +29,11 @@ class JeiSEO_Helpers {
      */
     public static function score_label( int $score ): string {
         if ( $score >= 80 ) {
-            return __( 'Good', 'jeiseo' );
+            return __( 'Good', 'jeiseo-ai-marketing-automation' );
         } elseif ( $score >= 50 ) {
-            return __( 'Needs Improvement', 'jeiseo' );
+            return __( 'Needs Improvement', 'jeiseo-ai-marketing-automation' );
         }
-        return __( 'Poor', 'jeiseo' );
+        return __( 'Poor', 'jeiseo-ai-marketing-automation' );
     }
 
     /**
@@ -119,16 +119,20 @@ class JeiSEO_Helpers {
     public static function get_images_without_alt(): array {
         global $wpdb;
 
-        $query = "
-            SELECT p.ID, p.post_title, p.guid
-            FROM {$wpdb->posts} p
-            LEFT JOIN {$wpdb->postmeta} pm ON p.ID = pm.post_id AND pm.meta_key = '_wp_attachment_image_alt'
-            WHERE p.post_type = 'attachment'
-            AND p.post_mime_type LIKE 'image/%'
-            AND (pm.meta_value IS NULL OR pm.meta_value = '')
-        ";
-
-        return $wpdb->get_results( $query );
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Safe query, no user input
+        return $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT p.ID, p.post_title, p.guid
+                FROM {$wpdb->posts} p
+                LEFT JOIN {$wpdb->postmeta} pm ON p.ID = pm.post_id AND pm.meta_key = %s
+                WHERE p.post_type = %s
+                AND p.post_mime_type LIKE %s
+                AND (pm.meta_value IS NULL OR pm.meta_value = '')",
+                '_wp_attachment_image_alt',
+                'attachment',
+                'image/%'
+            )
+        );
     }
 
     /**

@@ -44,7 +44,7 @@ class JeiSEO_API {
         if ( ! $this->is_configured() ) {
             return array(
                 'success' => false,
-                'error'   => __( 'API key not configured.', 'jeiseo' ),
+                'error'   => __( 'API key not configured.', 'jeiseo-ai-marketing-automation' ),
             );
         }
 
@@ -63,7 +63,7 @@ class JeiSEO_API {
             default:
                 return array(
                     'success' => false,
-                    'error'   => __( 'Unknown API provider.', 'jeiseo' ),
+                    'error'   => __( 'Unknown API provider.', 'jeiseo-ai-marketing-automation' ),
                 );
         }
     }
@@ -112,7 +112,7 @@ class JeiSEO_API {
         if ( isset( $body['error'] ) ) {
             return array(
                 'success' => false,
-                'error'   => $body['error']['message'] ?? __( 'API error.', 'jeiseo' ),
+                'error'   => $body['error']['message'] ?? __( 'API error.', 'jeiseo-ai-marketing-automation' ),
             );
         }
 
@@ -162,7 +162,7 @@ class JeiSEO_API {
         if ( isset( $body['error'] ) ) {
             return array(
                 'success' => false,
-                'error'   => $body['error']['message'] ?? __( 'API error.', 'jeiseo' ),
+                'error'   => $body['error']['message'] ?? __( 'API error.', 'jeiseo-ai-marketing-automation' ),
             );
         }
 

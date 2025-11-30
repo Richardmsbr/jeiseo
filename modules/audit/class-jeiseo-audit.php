@@ -74,8 +74,8 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'critical',
                 'category' => 'security',
-                'title'    => __( 'No SSL certificate', 'jeiseo' ),
-                'message'  => __( 'Your site is not using HTTPS. This affects SEO and security.', 'jeiseo' ),
+                'title'    => __( 'No SSL certificate', 'jeiseo-ai-marketing-automation' ),
+                'message'  => __( 'Your site is not using HTTPS. This affects SEO and security.', 'jeiseo-ai-marketing-automation' ),
                 'fix'      => 'manual',
                 'fixable'  => false,
             );
@@ -90,8 +90,8 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'warning',
                 'category' => 'technical',
-                'title'    => __( 'No sitemap found', 'jeiseo' ),
-                'message'  => __( 'XML Sitemap helps search engines discover your pages.', 'jeiseo' ),
+                'title'    => __( 'No sitemap found', 'jeiseo-ai-marketing-automation' ),
+                'message'  => __( 'XML Sitemap helps search engines discover your pages.', 'jeiseo-ai-marketing-automation' ),
                 'fix'      => 'manual',
                 'fixable'  => false,
             );
@@ -106,8 +106,8 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'info',
                 'category' => 'technical',
-                'title'    => __( 'No robots.txt', 'jeiseo' ),
-                'message'  => __( 'Robots.txt helps control search engine crawling.', 'jeiseo' ),
+                'title'    => __( 'No robots.txt', 'jeiseo-ai-marketing-automation' ),
+                'message'  => __( 'Robots.txt helps control search engine crawling.', 'jeiseo-ai-marketing-automation' ),
                 'fix'      => 'manual',
                 'fixable'  => false,
             );
@@ -124,8 +124,8 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'critical',
                 'category' => 'technical',
-                'title'    => __( 'Plain permalinks', 'jeiseo' ),
-                'message'  => __( 'Using plain permalinks hurts SEO. Use post name structure.', 'jeiseo' ),
+                'title'    => __( 'Plain permalinks', 'jeiseo-ai-marketing-automation' ),
+                'message'  => __( 'Using plain permalinks hurts SEO. Use post name structure.', 'jeiseo-ai-marketing-automation' ),
                 'fix'      => 'manual',
                 'fixable'  => false,
             );
@@ -180,8 +180,8 @@ class JeiSEO_Audit {
                 'type'     => 'warning',
                 'category' => 'content',
                 /* translators: %d: number of pages */
-                'title'    => sprintf( __( '%d pages with short titles', 'jeiseo' ), count( $short_titles ) ),
-                'message'  => __( 'Titles under 30 characters may not be descriptive enough.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d pages with short titles', 'jeiseo-ai-marketing-automation' ), count( $short_titles ) ),
+                'message'  => __( 'Titles under 30 characters may not be descriptive enough.', 'jeiseo-ai-marketing-automation' ),
                 'posts'    => $short_titles,
                 'fix'      => 'ai',
                 'fixable'  => true,
@@ -193,8 +193,8 @@ class JeiSEO_Audit {
                 'type'     => 'warning',
                 'category' => 'content',
                 /* translators: %d: number of pages */
-                'title'    => sprintf( __( '%d pages with long titles', 'jeiseo' ), count( $long_titles ) ),
-                'message'  => __( 'Titles over 60 characters may be truncated in search results.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d pages with long titles', 'jeiseo-ai-marketing-automation' ), count( $long_titles ) ),
+                'message'  => __( 'Titles over 60 characters may be truncated in search results.', 'jeiseo-ai-marketing-automation' ),
                 'posts'    => $long_titles,
                 'fix'      => 'ai',
                 'fixable'  => true,
@@ -206,8 +206,8 @@ class JeiSEO_Audit {
                 'type'     => 'critical',
                 'category' => 'content',
                 /* translators: %d: number of pages */
-                'title'    => sprintf( __( '%d pages with duplicate titles', 'jeiseo' ), count( $duplicate_titles ) ),
-                'message'  => __( 'Duplicate titles confuse search engines and users.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d pages with duplicate titles', 'jeiseo-ai-marketing-automation' ), count( $duplicate_titles ) ),
+                'message'  => __( 'Duplicate titles confuse search engines and users.', 'jeiseo-ai-marketing-automation' ),
                 'posts'    => $duplicate_titles,
                 'fix'      => 'manual',
                 'fixable'  => false,
@@ -251,8 +251,8 @@ class JeiSEO_Audit {
                 'type'     => 'critical',
                 'category' => 'content',
                 /* translators: %d: number of pages */
-                'title'    => sprintf( __( '%d pages without meta description', 'jeiseo' ), count( $missing ) ),
-                'message'  => __( 'Meta descriptions are important for click-through rates.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d pages without meta description', 'jeiseo-ai-marketing-automation' ), count( $missing ) ),
+                'message'  => __( 'Meta descriptions are important for click-through rates.', 'jeiseo-ai-marketing-automation' ),
                 'posts'    => $missing,
                 'fix'      => 'ai',
                 'fixable'  => true,
@@ -296,8 +296,8 @@ class JeiSEO_Audit {
                 'type'     => 'warning',
                 'category' => 'content',
                 /* translators: %d: number of posts */
-                'title'    => sprintf( __( '%d long posts without H2 headings', 'jeiseo' ), count( $no_h2 ) ),
-                'message'  => __( 'Headings help structure content and improve readability.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d long posts without H2 headings', 'jeiseo-ai-marketing-automation' ), count( $no_h2 ) ),
+                'message'  => __( 'Headings help structure content and improve readability.', 'jeiseo-ai-marketing-automation' ),
                 'posts'    => $no_h2,
                 'fix'      => 'manual',
                 'fixable'  => false,
@@ -309,8 +309,8 @@ class JeiSEO_Audit {
                 'type'     => 'warning',
                 'category' => 'content',
                 /* translators: %d: number of pages */
-                'title'    => sprintf( __( '%d pages with H1 in content', 'jeiseo' ), count( $multiple_h1 ) ),
-                'message'  => __( 'Avoid H1 in content - the title is already H1.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d pages with H1 in content', 'jeiseo-ai-marketing-automation' ), count( $multiple_h1 ) ),
+                'message'  => __( 'Avoid H1 in content - the title is already H1.', 'jeiseo-ai-marketing-automation' ),
                 'posts'    => $multiple_h1,
                 'fix'      => 'manual',
                 'fixable'  => false,
@@ -336,8 +336,8 @@ class JeiSEO_Audit {
                 'type'     => 'critical',
                 'category' => 'accessibility',
                 /* translators: %d: number of images */
-                'title'    => sprintf( __( '%d images without alt text', 'jeiseo' ), count( $images ) ),
-                'message'  => __( 'Alt text improves accessibility and image SEO.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d images without alt text', 'jeiseo-ai-marketing-automation' ), count( $images ) ),
+                'message'  => __( 'Alt text improves accessibility and image SEO.', 'jeiseo-ai-marketing-automation' ),
                 'images'   => $image_ids,
                 'fix'      => 'ai',
                 'fixable'  => true,
@@ -380,8 +380,8 @@ class JeiSEO_Audit {
                 'type'     => 'warning',
                 'category' => 'content',
                 /* translators: %d: number of pages */
-                'title'    => sprintf( __( '%d pages without internal links', 'jeiseo' ), count( $no_links ) ),
-                'message'  => __( 'Internal links help users and search engines navigate your site.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d pages without internal links', 'jeiseo-ai-marketing-automation' ), count( $no_links ) ),
+                'message'  => __( 'Internal links help users and search engines navigate your site.', 'jeiseo-ai-marketing-automation' ),
                 'posts'    => $no_links,
                 'fix'      => 'manual',
                 'fixable'  => false,
@@ -416,8 +416,8 @@ class JeiSEO_Audit {
                 'type'     => 'warning',
                 'category' => 'performance',
                 /* translators: %d: number of images */
-                'title'    => sprintf( __( '%d images over 500KB', 'jeiseo' ), count( $large_images ) ),
-                'message'  => __( 'Large images slow down your site. Consider compressing them.', 'jeiseo' ),
+                'title'    => sprintf( __( '%d images over 500KB', 'jeiseo-ai-marketing-automation' ), count( $large_images ) ),
+                'message'  => __( 'Large images slow down your site. Consider compressing them.', 'jeiseo-ai-marketing-automation' ),
                 'images'   => $large_images,
                 'fix'      => 'manual',
                 'fixable'  => false,
@@ -474,14 +474,14 @@ class JeiSEO_Audit {
         check_ajax_referer( 'jeiseo_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         // Check quota for free users
         if ( ! jeiseo()->is_pro() && jeiseo()->get_free_quota( 'audit' ) <= 0 ) {
             wp_send_json_error(
                 array(
-                    'message' => __( 'Free audit limit reached. Upgrade to PRO for unlimited audits.', 'jeiseo' ),
+                    'message' => __( 'Free audit limit reached. Upgrade to PRO for unlimited audits.', 'jeiseo-ai-marketing-automation' ),
                     'upgrade' => true,
                 )
             );
@@ -504,13 +504,13 @@ class JeiSEO_Audit {
         check_ajax_referer( 'jeiseo_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         if ( ! jeiseo()->is_pro() ) {
             wp_send_json_error(
                 array(
-                    'message' => __( 'Auto-fix is a PRO feature.', 'jeiseo' ),
+                    'message' => __( 'Auto-fix is a PRO feature.', 'jeiseo-ai-marketing-automation' ),
                     'upgrade' => true,
                 )
             );
@@ -555,7 +555,7 @@ class JeiSEO_Audit {
             array(
                 'fixed'   => $fixed,
                 /* translators: %d: number of fixed issues */
-                'message' => sprintf( __( 'Fixed %d issues.', 'jeiseo' ), $fixed ),
+                'message' => sprintf( __( 'Fixed %d issues.', 'jeiseo-ai-marketing-automation' ), $fixed ),
             )
         );
     }

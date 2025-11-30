@@ -57,13 +57,13 @@ class JeiSEO_License {
         check_ajax_referer( 'jeiseo_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         $license_key = isset( $_POST['license_key'] ) ? sanitize_text_field( wp_unslash( $_POST['license_key'] ) ) : '';
 
         if ( empty( $license_key ) ) {
-            wp_send_json_error( array( 'message' => __( 'Please enter a license key.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Please enter a license key.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         // Validate license with remote server
@@ -72,7 +72,7 @@ class JeiSEO_License {
         if ( $result['valid'] ) {
             update_option( 'jeiseo_license_key', $license_key );
             update_option( 'jeiseo_license_status', 'valid' );
-            wp_send_json_success( array( 'message' => __( 'License activated successfully!', 'jeiseo' ) ) );
+            wp_send_json_success( array( 'message' => __( 'License activated successfully!', 'jeiseo-ai-marketing-automation' ) ) );
         } else {
             wp_send_json_error( array( 'message' => $result['message'] ) );
         }
@@ -85,13 +85,13 @@ class JeiSEO_License {
         check_ajax_referer( 'jeiseo_nonce', 'nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'jeiseo-ai-marketing-automation' ) ) );
         }
 
         update_option( 'jeiseo_license_key', '' );
         update_option( 'jeiseo_license_status', 'free' );
 
-        wp_send_json_success( array( 'message' => __( 'License deactivated.', 'jeiseo' ) ) );
+        wp_send_json_success( array( 'message' => __( 'License deactivated.', 'jeiseo-ai-marketing-automation' ) ) );
     }
 
     /**
@@ -109,7 +109,7 @@ class JeiSEO_License {
 
         return array(
             'valid'   => false,
-            'message' => __( 'Invalid license key format.', 'jeiseo' ),
+            'message' => __( 'Invalid license key format.', 'jeiseo-ai-marketing-automation' ),
         );
     }
 

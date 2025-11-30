@@ -27,46 +27,46 @@ class JeiSEO_Admin {
      */
     public function add_menu(): void {
         add_menu_page(
-            __( 'JeiSEO', 'jeiseo' ),
-            __( 'JeiSEO', 'jeiseo' ),
+            __( 'JeiSEO', 'jeiseo-ai-marketing-automation' ),
+            __( 'JeiSEO', 'jeiseo-ai-marketing-automation' ),
             'manage_options',
-            'jeiseo',
+            'jeiseo-ai-marketing-automation',
             array( $this, 'render_dashboard' ),
             'dashicons-chart-area',
             30
         );
 
         add_submenu_page(
-            'jeiseo',
-            __( 'Dashboard', 'jeiseo' ),
-            __( 'Dashboard', 'jeiseo' ),
+            'jeiseo-ai-marketing-automation',
+            __( 'Dashboard', 'jeiseo-ai-marketing-automation' ),
+            __( 'Dashboard', 'jeiseo-ai-marketing-automation' ),
             'manage_options',
-            'jeiseo',
+            'jeiseo-ai-marketing-automation',
             array( $this, 'render_dashboard' )
         );
 
         add_submenu_page(
-            'jeiseo',
-            __( 'SEO Audit', 'jeiseo' ),
-            __( 'SEO Audit', 'jeiseo' ),
+            'jeiseo-ai-marketing-automation',
+            __( 'SEO Audit', 'jeiseo-ai-marketing-automation' ),
+            __( 'SEO Audit', 'jeiseo-ai-marketing-automation' ),
             'manage_options',
             'jeiseo-audit',
             array( $this, 'render_audit' )
         );
 
         add_submenu_page(
-            'jeiseo',
-            __( 'AI Content', 'jeiseo' ),
-            __( 'AI Content', 'jeiseo' ),
+            'jeiseo-ai-marketing-automation',
+            __( 'AI Content', 'jeiseo-ai-marketing-automation' ),
+            __( 'AI Content', 'jeiseo-ai-marketing-automation' ),
             'manage_options',
             'jeiseo-content',
             array( $this, 'render_content' )
         );
 
         add_submenu_page(
-            'jeiseo',
-            __( 'Settings', 'jeiseo' ),
-            __( 'Settings', 'jeiseo' ),
+            'jeiseo-ai-marketing-automation',
+            __( 'Settings', 'jeiseo-ai-marketing-automation' ),
+            __( 'Settings', 'jeiseo-ai-marketing-automation' ),
             'manage_options',
             'jeiseo-settings',
             array( $this, 'render_settings' )
@@ -77,7 +77,7 @@ class JeiSEO_Admin {
      * Enqueue admin assets
      */
     public function enqueue_assets( string $hook ): void {
-        if ( strpos( $hook, 'jeiseo' ) === false ) {
+        if ( strpos( $hook, 'jeiseo-ai-marketing-automation' ) === false ) {
             return;
         }
 
@@ -103,10 +103,10 @@ class JeiSEO_Admin {
                 'ajaxUrl' => admin_url( 'admin-ajax.php' ),
                 'nonce'   => wp_create_nonce( 'jeiseo_nonce' ),
                 'strings' => array(
-                    'running'  => __( 'Running audit...', 'jeiseo' ),
-                    'fixing'   => __( 'Fixing issues...', 'jeiseo' ),
-                    'complete' => __( 'Complete!', 'jeiseo' ),
-                    'error'    => __( 'An error occurred.', 'jeiseo' ),
+                    'running'  => __( 'Running audit...', 'jeiseo-ai-marketing-automation' ),
+                    'fixing'   => __( 'Fixing issues...', 'jeiseo-ai-marketing-automation' ),
+                    'complete' => __( 'Complete!', 'jeiseo-ai-marketing-automation' ),
+                    'error'    => __( 'An error occurred.', 'jeiseo-ai-marketing-automation' ),
                 ),
             )
         );
@@ -172,12 +172,12 @@ class JeiSEO_Admin {
      */
     public function plugin_links( array $links ): array {
         $custom = array(
-            '<a href="' . admin_url( 'admin.php?page=jeiseo' ) . '">' . __( 'Dashboard', 'jeiseo' ) . '</a>',
-            '<a href="' . admin_url( 'admin.php?page=jeiseo-settings' ) . '">' . __( 'Settings', 'jeiseo' ) . '</a>',
+            '<a href="' . admin_url( 'admin.php?page=jeiseo' ) . '">' . __( 'Dashboard', 'jeiseo-ai-marketing-automation' ) . '</a>',
+            '<a href="' . admin_url( 'admin.php?page=jeiseo-settings' ) . '">' . __( 'Settings', 'jeiseo-ai-marketing-automation' ) . '</a>',
         );
 
         if ( ! jeiseo()->is_pro() ) {
-            $custom[] = '<a href="https://jeiseo.com/pro" target="_blank" style="color:#22c55e;font-weight:bold;">' . __( 'Upgrade to PRO', 'jeiseo' ) . '</a>';
+            $custom[] = '<a href="https://jeiseo.com/pro" target="_blank" style="color:#22c55e;font-weight:bold;">' . __( 'Upgrade to PRO', 'jeiseo-ai-marketing-automation' ) . '</a>';
         }
 
         return array_merge( $custom, $links );
