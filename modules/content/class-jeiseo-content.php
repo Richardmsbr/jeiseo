@@ -82,6 +82,7 @@ class JeiSEO_Content {
 
         // Save to database
         global $wpdb;
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
         $wpdb->insert(
             $wpdb->prefix . 'jeiseo_content',
             array(
@@ -147,6 +148,7 @@ class JeiSEO_Content {
         // Update content record
         if ( $content_id ) {
             global $wpdb;
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
             $wpdb->update(
                 $wpdb->prefix . 'jeiseo_content',
                 array(
@@ -175,6 +177,7 @@ class JeiSEO_Content {
     public function get_history( int $limit = 20 ): array {
         global $wpdb;
 
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         return $wpdb->get_results(
             $wpdb->prepare(
                 "SELECT * FROM {$wpdb->prefix}jeiseo_content ORDER BY created_at DESC LIMIT %d",

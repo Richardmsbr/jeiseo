@@ -395,6 +395,7 @@ class JeiSEO_Audit {
     private function check_large_images(): void {
         global $wpdb;
 
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $images = $wpdb->get_results(
             "SELECT ID, guid FROM {$wpdb->posts} WHERE post_type = 'attachment' AND post_mime_type LIKE 'image/%'"
         );
@@ -454,6 +455,7 @@ class JeiSEO_Audit {
     private function save_audit( int $score ): void {
         global $wpdb;
 
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
         $wpdb->insert(
             $wpdb->prefix . 'jeiseo_audits',
             array(

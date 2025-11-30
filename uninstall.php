@@ -13,7 +13,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 // Delete options.
-$options = array(
+$jeiseo_options = array(
     'jeiseo_license_key',
     'jeiseo_license_status',
     'jeiseo_api_provider',
@@ -27,8 +27,8 @@ $options = array(
     'jeiseo_quota_reset_date',
 );
 
-foreach ( $options as $option ) {
-    delete_option( $option );
+foreach ( $jeiseo_options as $jeiseo_option ) {
+    delete_option( $jeiseo_option );
 }
 
 // Delete transients.
@@ -36,9 +36,9 @@ delete_transient( 'jeiseo_audit_cache' );
 delete_transient( 'jeiseo_dashboard_stats' );
 
 // Clear scheduled events.
-$timestamp = wp_next_scheduled( 'jeiseo_weekly_report_cron' );
-if ( $timestamp ) {
-    wp_unschedule_event( $timestamp, 'jeiseo_weekly_report_cron' );
+$jeiseo_timestamp = wp_next_scheduled( 'jeiseo_weekly_report_cron' );
+if ( $jeiseo_timestamp ) {
+    wp_unschedule_event( $jeiseo_timestamp, 'jeiseo_weekly_report_cron' );
 }
 
 // Clean up any user meta if needed.

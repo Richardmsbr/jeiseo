@@ -26,6 +26,7 @@ class JeiSEO_Dashboard {
         global $wpdb;
 
         // Get last audit
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $last_audit = $wpdb->get_row(
             "SELECT * FROM {$wpdb->prefix}jeiseo_audits ORDER BY audit_date DESC LIMIT 1"
         );
@@ -100,6 +101,7 @@ class JeiSEO_Dashboard {
     public function get_activity( int $limit = 10 ): array {
         global $wpdb;
 
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $audits = $wpdb->get_results(
             $wpdb->prepare(
                 "SELECT 'audit' as type, audit_date as date, score, issues_count as details
@@ -111,6 +113,7 @@ class JeiSEO_Dashboard {
             ARRAY_A
         );
 
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $content = $wpdb->get_results(
             $wpdb->prepare(
                 "SELECT 'content' as type, created_at as date, content_type, status as details
