@@ -1,4 +1,4 @@
-=== JeiSEO - AI Marketing Automation ===
+=== JeiSEO ===
 Contributors: richardmsbr
 Tags: seo, marketing, ai, content, optimization
 Requires at least: 6.0

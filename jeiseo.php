@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: JeiSEO - AI Marketing Automation
+ * Plugin Name: JeiSEO
  * Plugin URI: https://github.com/Richardmsbr/jeiseo
  * Description: Transform your WordPress into a complete marketing agency. Automated SEO audits, AI content generation, auto-fix issues, and real ROI tracking.
  * Version: 1.0.0

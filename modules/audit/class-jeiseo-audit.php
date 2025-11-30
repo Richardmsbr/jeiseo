@@ -179,6 +179,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'warning',
                 'category' => 'content',
+                /* translators: %d: number of pages */
                 'title'    => sprintf( __( '%d pages with short titles', 'jeiseo' ), count( $short_titles ) ),
                 'message'  => __( 'Titles under 30 characters may not be descriptive enough.', 'jeiseo' ),
                 'posts'    => $short_titles,
@@ -191,6 +192,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'warning',
                 'category' => 'content',
+                /* translators: %d: number of pages */
                 'title'    => sprintf( __( '%d pages with long titles', 'jeiseo' ), count( $long_titles ) ),
                 'message'  => __( 'Titles over 60 characters may be truncated in search results.', 'jeiseo' ),
                 'posts'    => $long_titles,
@@ -203,6 +205,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'critical',
                 'category' => 'content',
+                /* translators: %d: number of pages */
                 'title'    => sprintf( __( '%d pages with duplicate titles', 'jeiseo' ), count( $duplicate_titles ) ),
                 'message'  => __( 'Duplicate titles confuse search engines and users.', 'jeiseo' ),
                 'posts'    => $duplicate_titles,
@@ -247,6 +250,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'critical',
                 'category' => 'content',
+                /* translators: %d: number of pages */
                 'title'    => sprintf( __( '%d pages without meta description', 'jeiseo' ), count( $missing ) ),
                 'message'  => __( 'Meta descriptions are important for click-through rates.', 'jeiseo' ),
                 'posts'    => $missing,
@@ -291,6 +295,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'warning',
                 'category' => 'content',
+                /* translators: %d: number of posts */
                 'title'    => sprintf( __( '%d long posts without H2 headings', 'jeiseo' ), count( $no_h2 ) ),
                 'message'  => __( 'Headings help structure content and improve readability.', 'jeiseo' ),
                 'posts'    => $no_h2,
@@ -303,6 +308,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'warning',
                 'category' => 'content',
+                /* translators: %d: number of pages */
                 'title'    => sprintf( __( '%d pages with H1 in content', 'jeiseo' ), count( $multiple_h1 ) ),
                 'message'  => __( 'Avoid H1 in content - the title is already H1.', 'jeiseo' ),
                 'posts'    => $multiple_h1,
@@ -329,6 +335,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'critical',
                 'category' => 'accessibility',
+                /* translators: %d: number of images */
                 'title'    => sprintf( __( '%d images without alt text', 'jeiseo' ), count( $images ) ),
                 'message'  => __( 'Alt text improves accessibility and image SEO.', 'jeiseo' ),
                 'images'   => $image_ids,
@@ -372,6 +379,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'warning',
                 'category' => 'content',
+                /* translators: %d: number of pages */
                 'title'    => sprintf( __( '%d pages without internal links', 'jeiseo' ), count( $no_links ) ),
                 'message'  => __( 'Internal links help users and search engines navigate your site.', 'jeiseo' ),
                 'posts'    => $no_links,
@@ -407,6 +415,7 @@ class JeiSEO_Audit {
             $this->issues[] = array(
                 'type'     => 'warning',
                 'category' => 'performance',
+                /* translators: %d: number of images */
                 'title'    => sprintf( __( '%d images over 500KB', 'jeiseo' ), count( $large_images ) ),
                 'message'  => __( 'Large images slow down your site. Consider compressing them.', 'jeiseo' ),
                 'images'   => $large_images,
@@ -545,6 +554,7 @@ class JeiSEO_Audit {
         wp_send_json_success(
             array(
                 'fixed'   => $fixed,
+                /* translators: %d: number of fixed issues */
                 'message' => sprintf( __( 'Fixed %d issues.', 'jeiseo' ), $fixed ),
             )
         );
